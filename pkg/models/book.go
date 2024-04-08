@@ -37,7 +37,9 @@ func GetBookById(Id int64) (*Book, *gorm.DB) {
 }
 func DeleteBook(ID int64) (*Book, *gorm.DB) {
 	var book Book
-	db := db.Where("ID=?", ID).Find(&getBook)
+	//db := db.Where("ID=?", ID).Find(&getBook)
+	db.Where("ID=?", ID).Find(&book)
+
 	return book
 
 }
